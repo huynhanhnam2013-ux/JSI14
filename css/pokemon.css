@@ -1,0 +1,80 @@
+body {
+    background: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* khung chính */
+.pokedex {
+    display: flex;
+    gap: 10px;
+}
+
+/* 2 bên */
+.left, .right {
+    width: 250px;
+    background: #d32f2f;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: inset -5px -5px 10px #a00000,
+                inset 5px 5px 10px #ff4c4c;
+}
+
+/* camera góc trái */
+.camera {
+    width: 30px;
+    height: 30px;
+    background: #00e5ff;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px #00e5ff;
+}
+
+/* màn hình */
+.screen {
+    background: #9bd4d6;
+    border: 5px solid #333;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+/* ảnh */
+.screen img {
+    width: 120px;
+}
+
+/* info */
+.info {
+    font-size: 14px;
+    background: #e0f7fa;
+}
+
+/* điều khiển */
+.controls {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+#search {
+    flex: 1;
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+}
+
+button {
+    padding: 8px;
+    border-radius: 10px;
+    border: none;
+    background: #1976d2;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0d47a1;
+}

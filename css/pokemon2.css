@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    color: white;
+}
+
+/* HEADER */
+.topbar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    width: 250px;
+    outline: none;
+}
+
+button {
+    padding: 12px 16px;
+    border-radius: 10px;
+    border: none;
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+button:hover {
+    background: #2563eb;
+}
+
+/* MAIN */
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+/* CARD */
+.card {
+    width: 300px;
+    background: rgba(30,41,59,0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    transition: 0.3s;
+    position: relative;
+}
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+/* IMAGE */
+.card img {
+    width: 130px;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* TEXT */
+.card h3 {
+    margin: 10px 0;
+}
+.card p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* STATS */
+.stat {
+    margin-top: 5px;
+    text-align: left;
+}
+
+.bar {
+    height: 8px;
+    background: #1f2937;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.bar div {
+    height: 100%;
+    background: linear-gradient(90deg,#22c55e,#4ade80);
+}
+
+/* COMPARE RESULT */
+.winner {
+    outline: 3px solid gold;
+}
+
+/* FAVORITES */
+#favorites {
+    margin: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.fav-card {
+    background: #1e293b;
+    padding: 10px;
+    border-radius: 12px;
+    width: 90px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.fav-card:hover {
+    background: #334155;
+    transform: scale(1.1);
+}
+
+.fav-card img {
+    width: 60px;
+}

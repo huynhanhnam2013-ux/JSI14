@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Add Movie - MoviX</title>
+
+    <link rel="stylesheet" href="../CSS_spck/admin.css" />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+
+    <div class="navbar">
+      <div class="nav-left">
+        <div class="logo">🎬 MoviX</div>
+
+        <div class="nav-menu">
+          <a href="admin_home.html"> Dashboard </a>
+
+          <a class="active" href="admin_addmovie.html"> Add Movie </a>
+
+          <a href="admin_deletemovie.html"> Delete Movie </a>
+
+          <a href="admin_editmovie.html"> Edit Movie </a>
+
+          <a href="home.html"> Back To MoviX </a>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <a class="admin-btn"> ⚙ Admin </a>
+
+        <div class="account-box" id="accountBox">
+          <div class="account-info">
+            <div class="avatar">👤</div>
+
+            <div>
+              <div class="hello-text">Xin chào</div>
+
+              <span id="accountName"> Admin </span>
+            </div>
+          </div>
+
+          <div class="account-menu" id="accountMenu">
+            <a href="profile.html"> Trang cá nhân </a>
+
+            <button id="logoutBtn">Đăng xuất</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= CONTENT ================= -->
+
+    <section class="content">
+      <div class="section-header">
+        <span class="mini-title"> ADMIN PANEL </span>
+
+        <h2 class="section-title">Thêm phim mới</h2>
+      </div>
+
+      <div class="add-movie-layout">
+        <!-- FORM -->
+
+        <div class="form-card">
+          <form id="movieForm">
+            <!-- TÊN PHIM -->
+
+            <div class="form-group">
+              <label>Tên phim</label>
+
+              <input
+                type="text"
+                id="movieTitle"
+                placeholder="Ví dụ: Avengers Endgame"
+              />
+            </div>
+
+            <!-- POSTER -->
+
+            <div class="form-group">
+              <label>Poster phim</label>
+
+              <input type="file" id="posterFile" accept="image/*" />
+            </div>
+
+            <!-- THỂ LOẠI -->
+
+            <div class="form-group">
+              <label>Thể loại</label>
+
+              <select id="movieCategory">
+                <option value="">-- Chọn thể loại --</option>
+
+                <option value="Action">Action</option>
+
+                <option value="Animated">Animated</option>
+
+                <option value="Anime">Anime</option>
+
+                <option value="Comedy">Comedy</option>
+
+                <option value="Horror">Horror</option>
+
+                <option value="Science Fiction">Science Fiction</option>
+              </select>
+            </div>
+
+            <!-- MÔ TẢ -->
+
+            <div class="form-group">
+              <label>Mô tả phim</label>
+
+              <textarea
+                id="movieDescription"
+                placeholder="Nhập mô tả phim..."
+              ></textarea>
+            </div>
+
+            <!-- LINK PHIM -->
+
+            <div class="form-group">
+              <label>Link xem phim</label>
+
+              <input type="text" id="movieLink" placeholder="https://..." />
+            </div>
+
+            <!-- BUTTON -->
+
+            <button class="submit-btn" type="submit">➕ Add Movie</button>
+          </form>
+        </div>
+
+        <!-- PREVIEW -->
+
+        <div class="preview-card">
+          <h3>Preview Poster</h3>
+
+          <img
+            id="posterPreview"
+            src="https://via.placeholder.com/300x420?text=Poster"
+            alt="preview"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Firebase -->
+
+    <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore-compat.js"></script>
+
+    <script src="../Js_spck/firebase-config.js"></script>
+    <script src="../Js_spck/auth.js"></script>
+
+    <!-- Add Movie JS -->
+
+    <script src="../Js_spck/admin_addmovie.js"></script>
+  </body>
+</html>

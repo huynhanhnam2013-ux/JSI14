@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MoviX</title>
+
+    <link rel="stylesheet" href="../Css_spck/home.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+      <div class="nav-left">
+        <h2 class="logo">🎬 MoviX</h2>
+
+        <nav class="nav-menu">
+          <a href="home.html" class="active"> Trang chủ </a>
+
+          <a href="search.html"> Tìm kiếm </a>
+
+          <a href="favorite.html"> Yêu thích </a>
+        </nav>
+      </div>
+
+      <div class="nav-right">
+        <a id="adminBtn" href="admin_home.html" class="admin-btn"> ⚙ Admin </a>
+
+        <div class="account-box" id="accountBox">
+          <div class="account-info">
+            <div class="avatar">👤</div>
+
+            <div>
+              <span class="hello-text"> Xin chào </span>
+
+              <p id="accountName">User</p>
+            </div>
+          </div>
+
+          <!-- DROPDOWN -->
+          <div class="account-menu" id="accountMenu">
+            <a href="profile.html"> 👤 Trang cá nhân </a>
+
+            <button id="logoutBtn">🚪 Đăng xuất</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <span class="movie-tag"> 🔥 MOVIX HOT </span>
+
+        <h1>Khám phá thế giới phim ảnh</h1>
+
+        <p>
+          Hàng trăm bộ phim hấp dẫn, cập nhật liên tục với trải nghiệm xem phim
+          hiện đại nhất.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#movieSection" class="btn-primary"> 🎬 Xem phim </a>
+
+          <a href="search.html" class="btn-secondary"> 🔍 Tìm kiếm </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTENT ================= -->
+
+    <section class="content" id="movieSection">
+      <div class="section-header">
+        <div>
+          <span class="mini-title"> PHIM HOT </span>
+
+          <h2 class="section-title">🔥 Phim phổ biến</h2>
+        </div>
+      </div>
+
+      <!-- JS render -->
+      <div class="movie-list" id="movieList"></div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>🎬 MoviX</h3>
+
+          <p>
+            Nền tảng xem phim trực tuyến hiện đại với hàng trăm bộ phim hấp dẫn
+            nhất.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Liên kết</h3>
+
+          <a href="Tranghome.html"> Trang chủ </a>
+
+          <a href="Trang_tìm_kiếm.html"> Tìm kiếm </a>
+
+          <a href="Favorite.html"> Yêu thích </a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Liên hệ</h3>
+
+          <p>📧 support@movix.com</p>
+          <p>🌍 Việt Nam</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">© 2026 MoviX</div>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-app-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-auth-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore-compat.js"></script>
+
+    <!-- Firebase Config -->
+    <script src="../Js_spck/firebase-config.js"></script>
+
+    <!-- Auth -->
+    <script src="../Js_spck/auth.js"></script>
+
+    <!-- Home JS -->
+    <script src="../Js_spck/home.js"></script>
+
+  </body>
+</html>

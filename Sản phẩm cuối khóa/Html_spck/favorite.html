@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phim yêu thích</title>
+
+    <link rel="stylesheet" href="../Css_spck/favorite.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <div class="navbar">
+      <!-- LEFT -->
+      <div class="nav-left">
+        <h2 class="logo">🎬 MoviX</h2>
+        <nav class="nav-menu">
+          <a href="home.html"> Trang chủ </a>
+
+          <a href="search.html"> Tìm kiếm </a>
+
+          <a href="favorite.html" class="active"> Yêu thích </a>
+        </nav>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="nav-right">
+        <!-- ADMIN BUTTON -->
+        <a id="adminBtn" href="admin_home.html" class="admin-btn"> ⚙ Admin </a>
+
+        <!-- ACCOUNT -->
+        <div class="account-box" id="accountBox">
+          <div class="account-info">
+            <div class="avatar">👤</div>
+
+            <div>
+              <div class="hello-text">Xin chào</div>
+              <div id="accountName">User</div>
+            </div>
+          </div>
+
+          <div class="account-menu" id="accountMenu">
+            <a href="profile.html">👤 Trang cá nhân</a>
+            <button id="logoutBtn">🚪 Đăng xuất</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <section class="favorite-header">
+      <h1>❤️ Phim yêu thích</h1>
+      <p>Danh sách những bộ phim bạn đã lưu</p>
+    </section>
+
+    <!-- MOVIE LIST -->
+    <div class="favorite-container">
+      <div id="favoriteList" class="movie-grid">
+        <!-- JS render -->
+      </div>
+    </div>
+
+    <!-- EMPTY STATE -->
+    <div id="emptyMessage" class="empty-box">
+      <h2>Chưa có phim yêu thích</h2>
+      <p>Hãy thêm phim bạn thích vào danh sách ❤️</p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore-compat.js"></script>
+
+    <script src="../Js_spck/firebase-config.js"></script>
+    <script src="../Js_spck/auth.js"></script>
+    <script src="../Js_spck/favorite.js"></script>
+
+  </body>
+</html>

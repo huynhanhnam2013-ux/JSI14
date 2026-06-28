@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MoviX - Trang cá nhân</title>
+
+    <link rel="stylesheet" href="../Css_spck/profile.css" />
+
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+
+    <div class="navbar">
+      <div class="nav-left">
+        <div class="logo">🎬 MoviX</div>
+
+        <div class="nav-menu">
+          <a href="home.html"> Trang chủ </a>
+
+          <a href="search.html"> Tìm kiếm </a>
+
+          <a href="favorite.html"> Yêu thích </a>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <a class="admin-btn" href="#"> ⚙ Admin </a>
+
+        <div class="account-box">
+          <div class="account-info">
+            <div class="avatar">👤</div>
+
+            <div>
+              <div class="hello-text">Xin chào</div>
+
+              <div id="accountName">User</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= PROFILE ================= -->
+
+    <section class="profile-section">
+      <!-- PROFILE CARD -->
+
+      <div class="profile-card">
+        <div class="profile-top">
+          <div class="profile-avatar">👤</div>
+
+          <div>
+            <h1 id="profileName">Huynh Anh Nam</h1>
+
+            <p id="profileEmail">movix@gmail.com</p>
+
+            <div class="badges">
+              <span> 🎬 Movie Lover </span>
+
+              <span> ⭐ Thành viên MoviX </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATS -->
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h2>❤️</h2>
+          <h3>12</h3>
+          <p>Phim yêu thích</p>
+        </div>
+
+        <div class="stat-card">
+          <h2>🎞️</h2>
+          <h3>35</h3>
+          <p>Đã xem</p>
+        </div>
+
+        <div class="stat-card">
+          <h2>🕒</h2>
+          <h3>2025</h3>
+          <p>Tham gia</p>
+        </div>
+      </div>
+
+      <!-- INFO -->
+
+      <div class="info-card">
+        <h2>Thông tin cá nhân</h2>
+
+        <div class="info-list">
+          <div class="info-item">
+            <span>Username</span>
+            <p id="infoUsername">User</p>
+          </div>
+
+          <div class="info-item">
+            <span>Email</span>
+            <p id="infoEmail">email@gmail.com</p>
+          </div>
+
+          <div class="info-item">
+            <span>Vai trò</span>
+            <p id="infoRole">User</p>
+          </div>
+
+          <div class="info-item">
+            <span>Ngày tham gia</span>
+            <p id="joinYear">2025</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTON -->
+
+      <div class="quick-actions">
+        <a href="favorite.html" class="action-btn"> ❤️ Yêu thích </a>
+
+        <a href="search.html" class="action-btn secondary">
+          🔍 Khám phá phim
+        </a>
+
+        <a href="login_register.html" class="action-btn logout"> 🚪 Đăng xuất </a>
+      </div>
+    </section>
+    <script src="../Js_spck/profile.js"></script>
+
+  </body>
+</html>

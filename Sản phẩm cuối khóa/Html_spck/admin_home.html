@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MoviX Admin</title>
+
+    <link rel="stylesheet" href="../Css_spck/admin.css" />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+
+    <div class="navbar">
+      <div class="nav-left">
+        <div class="logo">🎬 MoviX</div>
+
+        <div class="nav-menu">
+          <a class="active" href="admin_home.html"> Dashboard </a>
+
+          <a href="admin_addmovie.html"> Add Movie </a>
+
+          <a href="admin_deletemovie.html"> Delete Movie </a>
+
+          <a href="admin_editmovie.html"> Edit Movie </a>
+
+          <a href="home.html"> Back To MoviX </a>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <a class="admin-btn" href="#"> ⚙ Admin </a>
+
+        <div class="account-box" id="accountBox">
+          <div class="account-info">
+            <div class="avatar">👤</div>
+
+            <div>
+              <div class="hello-text">Xin chào</div>
+
+              <span id="accountName"> Admin </span>
+            </div>
+          </div>
+
+          <!-- dropdown -->
+
+          <div class="account-menu" id="accountMenu">
+            <a href="profile.html"> Trang cá nhân </a>
+
+            <button id="logoutBtn">Đăng xuất</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="admin-hero">
+      <div class="hero-text">
+        <span class="admin-tag"> ⚙ ADMIN PANEL </span>
+
+        <h1>
+          Quản lý hệ thống <br />
+          MoviX
+        </h1>
+
+        <p>
+          Quản lý phim, chỉnh sửa nội dung và kiểm soát dữ liệu website tại đây.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= CONTENT ================= -->
+
+    <section class="content">
+      <div class="section-header">
+        <span class="mini-title"> OVERVIEW </span>
+
+        <h2 class="section-title">Dashboard thống kê</h2>
+      </div>
+
+      <!-- STATS -->
+
+      <div class="stats-grid">
+        <div class="stats-card">
+          <h3 id="movieCount">0</h3>
+          <p>Tổng số phim</p>
+        </div>  
+
+        <div class="stats-card">
+          <h3>6</h3>
+          <p>Thể loại</p>
+        </div>
+
+        <div class="stats-card">
+          <h3 id="userCount">0</h3>
+          <p>User</p>
+        </div>
+
+        <div class="stats-card">
+          <h3>3.0</h3>
+          <p>MoviX Version</p>
+        </div>
+      </div>
+
+      <!-- QUICK ACTION -->
+
+      <div class="section-header top-space">
+        <span class="mini-title"> QUICK ACTION </span>
+
+        <h2 class="section-title">Quản lý nhanh</h2>
+      </div>
+
+      <div class="action-grid">
+        <a href="admin_addmovie.html" class="action-card">
+          <h2>➕</h2>
+          <h3>Add Movie</h3>
+          <p>Thêm phim mới</p>
+        </a>
+
+        <a href="admin_editmovie.html" class="action-card">
+          <h2>✏️</h2>
+          <h3>Edit Movie</h3>
+          <p>Chỉnh sửa phim</p>
+        </a>
+
+        <a href="admin_deletemovie.html" class="action-card">
+          <h2>🗑</h2>
+          <h3>Delete Movie</h3>
+          <p>Xóa phim</p>
+        </a>
+      </div>
+
+      <!-- MOVIES -->
+
+      <!-- <div class="section-header top-space">
+        <span class="mini-title"> MOVIES </span>
+
+        <h2 class="section-title">Phim gần đây</h2>
+      </div>
+
+      <div class="movie-list" id="movieList">
+            /* === JS render === */ 
+      </div> -->
+    </section>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-app-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-auth-compat.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/12.13.0/firebase-firestore-compat.js"></script>
+
+    <!-- Config -->
+    <script src="../Js_spck/firebase-config.js"></script>
+
+    <!-- Auth -->
+    <script src="../Js_spck/auth.js"></script>
+
+    <!-- Admin -->
+    <script src="../Js_spck/admin-home.js"></script>
+
+  </body>
+</html>

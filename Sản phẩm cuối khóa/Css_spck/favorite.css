@@ -1,0 +1,398 @@
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+
+    background:
+    linear-gradient(
+        180deg,
+        #020617 0%,
+        #08112b 50%,
+        #0f172a 100%
+    );
+
+    color:white;
+    overflow-x:hidden;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+
+    background:
+    rgba(2,6,23,.85);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.05);
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 5%;
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
+}
+
+.nav-left{
+    display:flex;
+    align-items:center;
+    gap:35px;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+}
+
+.nav-left a{
+    color:#cbd5e1;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:500;
+    transition:.3s;
+    position:relative;
+    padding: 5px;
+}
+
+.nav-left a:hover{
+    color:white;
+}
+
+.nav-left a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:#ef4444;
+    transition:.3s;
+}
+
+.nav-left a:hover::after{
+    width:100%;
+}
+
+/* ================= RIGHT ================= */
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.admin-btn{
+    background:
+    rgba(255,255,255,.08);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    color:white;
+    color:white;
+    text-decoration:none;
+    padding:12px 18px;
+    border-radius:14px;
+    transition:.3s;
+}
+
+.admin-btn:hover{
+    background:
+    rgba(255,255,255,.15);
+
+    transform:translateY(-2px);
+}
+
+/* ================= ACCOUNT ================= */
+
+.account-box{
+    position:relative;
+    cursor:pointer;
+}
+
+.account-info{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    background:
+    linear-gradient(135deg,#7c3aed,#ec4899);
+
+    padding:10px 16px;
+    border-radius:16px;
+}
+
+.avatar{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:rgba(255,255,255,.2);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hello-text{
+    font-size:12px;
+    opacity:.9;
+}
+
+#accountName{
+    font-size:14px;
+    font-weight:600;
+}
+
+/* ================= MENU ================= */
+
+.account-menu{
+    position:absolute;
+    top:70px;
+    right:0;
+
+    width:220px;
+
+    background:#111827;
+
+    border-radius:18px;
+
+    display:none;
+    flex-direction:column;
+
+    overflow:hidden;
+
+    z-index:1000;
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.4);
+}
+
+@keyframes dropdown{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0);
+    }
+}
+
+.account-menu a,
+.account-menu button{
+    background:none;
+    border:none;
+    color:white;
+    text-decoration:none;
+
+    padding:16px;
+    text-align:left;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.account-menu a:hover,
+.account-menu button:hover{
+    background:#1f2937;
+}
+
+/* ================= HEADER ================= */
+
+.favorite-header{
+    padding:70px 5% 30px;
+}
+
+.favorite-header h1{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.favorite-header p{
+    color:#94a3b8;
+    font-size:16px;
+}
+
+/* ================= MOVIES ================= */
+
+.favorite-container{
+    padding:10px 5% 70px;
+}
+
+.movie-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fill,minmax(220px,1fr));
+
+    gap:25px;
+}
+
+.movie-card{
+    background:
+    rgba(255,255,255,.04);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    border:
+    1px solid rgba(255,255,255,.06);
+
+    transition:.35s;
+
+    box-shadow:
+    0 15px 30px rgba(0,0,0,.25);
+}
+
+.movie-card:hover{
+    transform:
+    translateY(-10px)
+    scale(1.03);
+
+    box-shadow:
+    0 20px 40px rgba(124,58,237,.25);
+}
+
+.movie-card img{
+    width:100%;
+    height:330px;
+    object-fit:cover;
+}
+
+.movie-title{
+    padding:18px;
+    text-align:center;
+    font-size:15px;
+    font-weight:600;
+}
+
+/* ================= EMPTY ================= */
+
+.empty-box{
+    margin-top:120px;
+    padding:50px;
+
+    background:
+    rgba(255,255,255,.03);
+
+    border:
+    1px solid rgba(255,255,255,.05);
+
+    border-radius:24px;
+
+    max-width:600px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.empty-box h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.empty-box p{
+    color:#94a3b8;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:900px){
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .nav-left{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .hero-content h1{
+        font-size:48px;
+    }
+
+    .div2{
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .navbar{
+        padding:15px;
+    }
+
+    .nav-menu{
+        gap:15px;
+        padding: 10px;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .search-hero{
+        height:70vh;
+        text-align:center;
+        justify-content:center;
+    }
+
+    .hero-content h1{
+        font-size:38px;
+    }
+
+    .hero-content p{
+        font-size:15px;
+    }
+
+    form{
+        flex-direction:column;
+    }
+
+    .submit1{
+        width:100%;
+    }
+
+    .div2{
+        grid-template-columns:
+        repeat(2,1fr);
+
+        gap:15px;
+    }
+
+    .movie-card img{
+        height:240px;
+    }
+
+    .section-title{
+        font-size:28px;
+    }
+
+    .account-info{
+        padding:8px 12px;
+    }
+}

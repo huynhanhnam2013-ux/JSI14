@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pokedex Final</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    color: white;
+}
+
+/* TOP */
+.topbar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    width: 250px;
+}
+
+button {
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #3b82f6;
+    color: white;
+    cursor: pointer;
+}
+
+/* MAIN */
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* CARD */
+.card {
+    width: 280px;
+    background: rgba(30,41,59,0.7);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+img { width: 120px; }
+
+/* STATS */
+.bar {
+    height: 8px;
+    background: #1f2937;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.bar div {
+    height: 100%;
+    background: lime;
+}
+
+/* FAVORITES */
+#favorites {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fav {
+    background: #1e293b;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <input id="search" placeholder="Pokemon name or ID">
+    <button onclick="searchPokemon()">Search</button>
+    <button onclick="compare()">Compare</button>
+</div>
+
+<div class="main">
+    <div id="card1" class="card"></div>
+    <div id="card2" class="card"></div>
+</div>
+
+<h2 style="text-align:center;">Favorites</h2>
+<div id="favorites"></div>
+
+<script>
+let p1 = null;
+let p2 = null;
+
+// fetch pokemon
+async function getPokemon(name){
+    let res = await fetch("https://pokeapi.co/api/v2/pokemon/" + name);
+    return await res.json();
+}
+
+// render
+function renderCard(data, el){
+    document.getElementById(el).innerHTML = `
+        <h3>${data.name} (#${data.id})</h3>
+        <img src="${data.sprites.front_default}">
+        <p>${data.types.map(t=>t.type.name).join(", ")}</p>
+
+        ${data.stats.map(s=>`
+            <div>${s.stat.name}
+                <div class="bar">
+                    <div style="width:${Math.min(s.base_stat,100)}%"></div>
+                </div>
+            </div>
+        `).join("")}
+
+        <button onclick="saveFav(${data.id},'${data.name}','${data.sprites.front_default}')">⭐</button>
+    `;
+}
+
+// search
+async function searchPokemon(){
+    let val = document.getElementById("search").value.toLowerCase();
+
+    try {
+        let data = await getPokemon(val);
+
+        if(!p1){
+            p1 = data;
+            renderCard(data,"card1");
+        } else {
+            p2 = data;
+            renderCard(data,"card2");
+        }
+
+    } catch {
+        alert("Pokemon not found!");
+    }
+}
+
+// compare
+function compare(){
+    if(!p1 || !p2){
+        alert("Need 2 Pokemon!");
+        return;
+    }
+
+    let s1 = p1.stats.reduce((a,b)=>a+b.base_stat,0);
+    let s2 = p2.stats.reduce((a,b)=>a+b.base_stat,0);
+
+    if(s1 > s2) alert(p1.name + " wins!");
+    else alert(p2.name + " wins!");
+}
+
+// favorites
+function saveFav(id,name,img){
+    let fav = JSON.parse(localStorage.getItem("fav")||"[]");
+
+    if(fav.some(f=>f.id===id)) return;
+
+    fav.push({id,name,img});
+    localStorage.setItem("fav", JSON.stringify(fav));
+
+    renderFav();
+}
+
+function renderFav(){
+    let fav = JSON.parse(localStorage.getItem("fav")||"[]");
+
+    document.getElementById("favorites").innerHTML =
+        fav.map(f=>`
+            <div class="fav" onclick="searchAgain('${f.name}')">
+                <img src="${f.img}" width="50"><br>
+                ${f.name}
+            </div>
+        `).join("");
+}
+
+function searchAgain(name){
+    document.getElementById("search").value = name;
+    p1 = null;
+    p2 = null;
+    document.getElementById("card1").innerHTML="";
+    document.getElementById("card2").innerHTML="";
+    searchPokemon();
+}
+
+renderFav();
+</script>
+
+</body>
+</html>

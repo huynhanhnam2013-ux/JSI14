@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoviX - Tìm kiếm</title>
+
+    <link rel="stylesheet" href="../Css_spck/search.css" />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+      <div class="nav-left">
+        <div class="logo">🎬 MoviX</div>
+
+        <div class="nav-menu">
+          <a href="home.html">Trang chủ</a>
+          <a href="#" class="active">Tìm kiếm</a>
+          <a href="favorite.html">Yêu thích</a>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <a id="adminBtn" href="admin_home.html" class="admin-btn"> ⚙ Admin </a>
+
+        <div class="account-box" id="accountBox">
+          <div class="account-info">
+            <div class="avatar">👤</div>
+
+            <div>
+              <div class="hello-text">Xin chào</div>
+
+              <div id="accountName">User</div>
+            </div>
+          </div>
+
+          <div class="account-menu" id="accountMenu">
+            <a href="profile.html"> Trang cá nhân </a>
+
+            <button id="logoutBtn">Đăng xuất</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ================= HERO SEARCH ================= -->
+
+    <section class="search-section">
+      <h1 class="search-title">Tìm kiếm phim</h1>
+
+      <p class="search-subtitle">Khám phá bộ phim yêu thích của bạn</p>
+
+      <form onsubmit="searchMovie(event)">
+        <input
+          id="searchInput"
+          class="input1"
+          type="text"
+          placeholder="Tìm phim hoặc thể loại..."
+        />
+
+        <!-- <button class="submit1" type="submit">🔍 Tìm kiếm</button> -->
+      </form>
+    </section>
+
+    <!-- ================= CATEGORY ================= -->
+
+    <section class="content">
+      <div class="section-header">
+        <div class="mini-title">THỂ LOẠI</div>
+
+        <h2 class="section-title">Danh mục phim</h2>
+      </div>
+
+      <div class="category-list">
+        <div class="category-item">Action</div>
+
+        <div class="category-item">Horror</div>
+
+        <div class="category-item">Animated</div>
+
+        <div class="category-item">Science Fiction</div>
+
+        <div class="category-item">Comedy</div>
+
+        <div class="category-item">Anime</div>
+      </div>
+    </section>
+
+    <!-- ================= MOVIES ================= -->
+
+    <section class="content">
+      <div class="section-header">
+
+        <h2 class="section-title">Phim nổi bật</h2>
+      </div>
+
+      <div class="div2"></div>
+    </section>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="../Js_spck/firebase-config.js"></script>
+
+    <script src="../Js_spck/search.js"></script>
+  </body>
+</html>

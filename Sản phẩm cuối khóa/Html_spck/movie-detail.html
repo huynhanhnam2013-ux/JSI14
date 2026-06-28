@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../Css_spck/movie-detail.css" />
+  </head>
+  <body>
+    <div class="detail-top">
+      <button onclick="history.back()" class="back-btn">← Quay lại</button>
+    </div>
+    <section class="movie-detail">
+      <!-- Poster -->
+
+      <div class="movie-poster">
+        <img
+          id="moviePoster"
+          src="https://via.placeholder.com/400x600"
+          alt="Movie Poster"
+        />
+      </div>
+
+      <!-- Info -->
+
+      <div class="movie-info">
+        <div class="top-tags">
+          <span class="movie-category"> ... </span>
+
+          <span id="movieScore" class="movie-score"> ⭐ Chưa có </span>
+        </div>
+
+        <h1 id="movieTitle">Doraemon Movie</h1>
+
+        <div class="movie-meta">
+          <span>📅 2025</span>
+
+          <span>⏱ 115 phút</span>
+        </div>
+
+        <p id="movieDescription" class="movie-description">
+          Mô tả phim sẽ hiển thị ở đây...
+        </p>
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="movie-actions">
+          <a href="#" id="watchBtn" class="watch-btn"> ▶ Xem phim </a>
+
+          <button id="favoriteBtn" class="favorite-btn">⭐ Yêu thích</button>
+        </div>
+
+        <!-- RATING -->
+
+        <div class="rating-box">
+          <h3>Đánh giá phim</h3>
+
+          <div class="rating-stars">
+            <span data-rate="1">⭐</span>
+
+            <span data-rate="2">⭐</span>
+
+            <span data-rate="3">⭐</span>
+
+            <span data-rate="4">⭐</span>
+
+            <span data-rate="5">⭐</span>
+          </div>
+
+          <p id="ratingText">Chưa có đánh giá</p>
+        </div>
+        <button></button>
+      </div>
+    </section>
+    <!-- RELATED MOVIES -->
+
+    <section class="related-section">
+      <h2>🎬 Phim cùng thể loại</h2>
+
+      <div id="relatedMovies" class="related-grid"></div>
+    </section>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="../Js_spck/firebase-config.js"></script>
+    <script src="../Js_spck/movie-dentail.js"></script>
+  </body>
+</html>
