@@ -26,10 +26,10 @@ loginTab.addEventListener("click", () => {
     registerForm.classList.remove("active-form");
 
     // đổi title tab trình duyệt
-    document.title = "MoviX - Đăng nhập";
+    document.title = "MoviX NOVA - Đăng nhập";
 
-    authTitle.textContent ="Chào mừng trở lại MoviX";
-    authDesc.textContent ="Đăng nhập để tiếp tục khám phá thế giới phim ảnh không giới hạn cùng MoviX 3.0";
+    authTitle.textContent ="Chào mừng trở lại MoviX NOVA";
+    authDesc.textContent ="Đăng nhập để tiếp tục khám phá thế giới phim ảnh không giới hạn cùng MoviX NOVA 3.0";
 });
 
 
@@ -46,8 +46,8 @@ registerTab.addEventListener("click", () => {
     loginForm.classList.remove("active-form");
 
     // đổi title tab trình duyệt
-    document.title = "MoviX - Đăng ký";
+    document.title = "MoviX NOVA - Đăng ký";
 
-    authTitle.textContent ="Chào mừng đến MoviX";
-    authDesc.textContent ="Tạo tài khoản để bắt đầu hành trình khám phá hàng ngàn bộ phim hấp dẫn cùng MoviX 3.0";
+    authTitle.textContent ="Chào mừng đến MoviX NOVA";
+    authDesc.textContent ="Tạo tài khoản để bắt đầu hành trình khám phá hàng ngàn bộ phim hấp dẫn cùng MoviX NOVA 3.0";
 });
