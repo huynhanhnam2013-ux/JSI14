@@ -91,35 +91,6 @@ window.openMovie = function(id){
     "movie-detail.html";
 };
 
-// ================= SEARCH BUTTON =================
-
-// function searchMovie(e) {
-
-//     e.preventDefault();
-
-//     const keyword =
-//         document
-//         .getElementById("searchInput")
-//         .value
-//         .toLowerCase()
-//         .trim();
-
-//     const result =
-//         allMovies.filter(movie =>
-
-//             movie.title
-//             .toLowerCase()
-//             .includes(keyword)
-
-//             ||
-
-//             movie.category
-//             .toLowerCase()
-//             .includes(keyword)
-//         );
-
-//     displayMovies(result);
-// }
 
 // ================= REALTIME SEARCH =================
 
